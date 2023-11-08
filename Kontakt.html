@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap" rel="stylesheet">
+    <link type="image/png" href="https://www.solvis.de/wp-content/uploads/2017/09/SOLVIS_favicon.png" rel="icon">
+  
+</head>
+<body>
+    <div id="head">
+        <div class="logo"><img src="./content/solvis.png" width="125" height="68" alt="Solvis logo"></div>
+        <h1>Kontakt & Anfragen</h1>
+    </div>
+    <form action="./scripts/send_email.php" method="post">
+    <div id="kontakt-form">
+    <div class="row">
+        <div class="col">
+            <label for="formGroupExampleInput2" class="form-label">Vorname*</label>
+          <input type="text" class="form-control" placeholder="Nachname" name="first_name" aria-label="Vornname">
+        </div>
+        <div class="col">
+            <label for="formGroupExampleInput2" class="form-label">Nachname*</label>
+          <input type="text" class="form-control" placeholder="Nachname" name="last_name" aria-label="Nachname">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label for="formGroupExampleInput2" class="form-label">Email*</label>
+          <input type="text" class="form-control" placeholder="Email" name="email" aria-label="Email">
+        </div>
+        <div class="col">
+            <label for="formGroupExampleInput2" class="form-label">Telephone</label>
+          <input type="text" class="form-control" placeholder="Telephone" name="telephone" aria-label="Telephone">
+        </div>
+    </div>
+    <label for="inputunternehmen4" class="form-label">Unternehmen</label>
+    <input type="Unternehmen" class="form-control" id="inputunternehmen4" name="company" placeholder="Unternehmen" aria-label="Unternehmen">
+    
+        
+
+        <label for="formGroupExampleInput2" class="form-label">Anliegen</label>
+    <select class="form-select" name="issue" id="autoSizingSelect">
+      <option selected>Bitte auswählen...</option>
+      <option value="1">Feedback</option>
+      <option value="2">Interne schulung</option>
+      <option value="3">Akedemie technisch</option>
+      <option value="4">Recruiting</option>
+      <option value="5">Ausbildung PLUS</option>
+      <option value="6">Allgemeine Anfrage</option>
+    </select>
+      <div class="mb-3">
+        <label for="Nachricht" class="form-label">Nachricht</label>
+        <textarea class="form-control" placeholder="Nachricht" name="message" aria-label="With textarea"></textarea>
+    <div class="col-auto" id="subbtn">
+        <button type="submit" class="btn btn-primary text-center">Absenden</button>
+      </div>
+      
+      </div>
+    </div>
+    </form>
+
+      <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-3 py-4 border-top">
+        <div class="col mb-3 mx-5">
+          <h5>Impressum</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Datenschutz</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+          </ul>
+        </div>
+        <div class="col mb-3 mx-5">
+            <h5 id="hk">h</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="./Kontakt.html" class="nav-link p-0 text-body-secondary">Kontakt</a></li>
+          </ul>
+        </div>
+      </footer>
+</body>
+</html>
