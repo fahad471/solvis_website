@@ -8,8 +8,8 @@ background-color: white;
 }
 h1{
     display: inline-block;
-    margin-left: 30%;
-    font-family: Arial, Helvetica, sans-serif;
+    margin: 30%;
+    font-family: 'Lato', sans-serif;
     
 }
 footer{
@@ -20,7 +20,7 @@ footer{
 #hk{
     color: gray;
 }
-.p1{
+.para{
     justify-content: center;
     margin-top: 30px;
     margin-left: 80px;
@@ -28,6 +28,40 @@ footer{
     text-align: justify;
 }
 .btn{
-    width: 30%;
-    font-size: 1px;
+    width: 27%;
+    font-weight: 450 !important;
+}
+#heater{
+    margin-left: 40px;
+    float: left;
+    height: 400px;
+}
+
+
+span{
+    font-weight: bold;
+}
+#kontakt-form{
+width: 65%;
+margin-left: 15%;
+margin-top: 5%;
+margin-bottom: 20px;
+background-color: rgb(245, 245, 245);
+padding: 10px;
+border-radius: 10px;
+}
+.btn-primary{
+    
+    width: 100px;
+    margin-top: 15px;
+}
+#subbtn{
+    text-align: center;
+}
+#inputnachricht4{
+    height: 150px;
+    
+}
+textarea{
+    height: 9rem;
 }
