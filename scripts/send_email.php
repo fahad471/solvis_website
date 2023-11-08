@@ -25,7 +25,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message .= "Nachricht:\n$message";
 
     // Set headers
-    $headers = "From: $email";
+    $headers = "From: izhmash47@gmail.com";
+
+    ini_set("SMTP", "smtp.gmail.com");
+    ini_set("smtp_port", 587);
+    ini_set("sendmail_from", "your-email@gmail.com");
 
     // Send the email
     $success = mail($to, $subject, $message, $headers);
