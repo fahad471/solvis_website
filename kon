@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .loader {
+            margin: auto;
+  
+  border: 20px solid #EAF0F6;
+  border-radius: 50%;
+  border-top: 20px solid #FF7A59;
+  width: 200px;
+  height: 200px;
+  animation: spinner 4s linear infinite;
+}
+
+@keyframes spinner {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+#loading-screen {
+            
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <form 
+  method="POST" 
+  action="https://script.google.com/macros/s/AKfycbzK9XpGmKyIT-s-aZgCe8bYqFoSXHNo3S1YPZjZ1epaF8AYf6TSCulnTI0wgQ1opp3v/exec"
+  id="myForm"
+>
+  <input name="Email" type="email" placeholder="Email" required>
+  <input name="Name" type="text" placeholder="Name" required>
+  <button type="submit">Send</button>
+</form>
+<div id="loading-screen">
+<div class="loader">
+    
+</div>
+</div>
+<script>
+    document.getElementById('myForm').addEventListener('submit', function(event) {
+      event.preventDefault();  // Prevent the default form submission behavior
+
+      // Use fetch to submit the form data to the Google Apps Script
+      fetch('https://script.google.com/macros/s/AKfycbzK9XpGmKyIT-s-aZgCe8bYqFoSXHNo3S1YPZjZ1epaF8AYf6TSCulnTI0wgQ1opp3v/exec', {
+        method: 'POST',
+        body: new FormData(event.target),
+      })
+      .then(response => response.json())
+      .then(data => {
+        // Handle the response
+        if (data.result === 'success') {
+          // Redirect to the specified URL
+          window.location.href = data.redirectUrl;
+        } else {
+          console.error('Form submission failed:', data.error);
+        }
+      })
+      .catch(error => console.error('Error:', error));
+    });
+    document.addEventListener("DOMContentLoaded", function() {
+    const loadingScreen = document.getElementById("loading-screen");
+
+    // Intercept form submission
+    document.getElementById("myForm").addEventListener("submit", function() {
+        // Show loading screen
+        loadingScreen.style.display = "flex"; // or "block" depending on your styling
+
+        // Submit the form
+        // Note: If you are using AJAX to submit the form, handle the loading screen in the AJAX success callback.
+
+        // Example: Simulate form submission for testing
+        setTimeout(function() {
+            // Hide loading screen after a delay (e.g., 3 seconds)
+            loadingScreen.style.display = "none";
+        }, 4000); // Adjust the delay as needed
+    });
+});
+  </script>
+</body>
+</html>
