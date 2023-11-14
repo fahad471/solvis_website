@@ -65,3 +65,9 @@ border-radius: 10px;
 textarea{
     height: 9rem;
 }
+#head1{
+    height: 800px;
+    text-align: center;
+    padding-top: 5%;
+
+}

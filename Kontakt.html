@@ -17,48 +17,54 @@
         <div class="logo"><img src="./content/solvis.png" width="125" height="68" alt="Solvis logo"></div>
         <h1>Kontakt & Anfragen</h1>
     </div>
-    <form action="./scripts/send_email.php" method="post">
+    <form id="myForm" class="row needs-validation"  action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeSTKmBmcaICLCFiq9ReU_Zdj6mHNLZCtR3R7DvOF-AYhNeLw/formResponse" method="POST" novalidate>
     <div id="kontakt-form">
     <div class="row">
         <div class="col">
-            <label for="formGroupExampleInput2" class="form-label">Vorname*</label>
-          <input type="text" class="form-control" placeholder="Nachname" name="first_name" aria-label="Vornname">
+            <label for="validationServer01" class="form-label">Vorname*</label>
+          <input type="text" class="form-control is-invalid" id="validationServer01" placeholder="Vorname" name="entry.57429747" aria-label="Vornname" aria-describedby="validationServer03Feedback" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
         </div>
         <div class="col">
             <label for="formGroupExampleInput2" class="form-label">Nachname*</label>
-          <input type="text" class="form-control" placeholder="Nachname" name="last_name" aria-label="Nachname">
+          <input type="text" class="form-control" placeholder="Nachname" name="entry.372197608"  aria-label="Nachname" required>
         </div>
     </div>
     <div class="row">
         <div class="col">
-            <label for="formGroupExampleInput2" class="form-label">Email*</label>
-          <input type="text" class="form-control" placeholder="Email" name="email" aria-label="Email">
+            <label for="EmailAddressInput" class="form-label">Email*</label>
+          <input type="email" class="form-control" placeholder="Email" id="EmailAddressInput" name="entry.1825799818" required>
+          <div class="invalid-feedback">
+            Incorrect email address
+        </div>
         </div>
         <div class="col">
             <label for="formGroupExampleInput2" class="form-label">Telephone</label>
-          <input type="text" class="form-control" placeholder="Telephone" name="telephone" aria-label="Telephone">
+          <input type="text" class="form-control" placeholder="Telephone" name="entry.954814767" aria-label="Telephone">
         </div>
     </div>
     <label for="inputunternehmen4" class="form-label">Unternehmen</label>
-    <input type="Unternehmen" class="form-control" id="inputunternehmen4" name="company" placeholder="Unternehmen" aria-label="Unternehmen">
+    <input type="Unternehmen" class="form-control" id="inputunternehmen4" name="entry.369840548" placeholder="Unternehmen" aria-label="Unternehmen">
     
         
 
         <label for="formGroupExampleInput2" class="form-label">Anliegen</label>
-    <select class="form-select" name="issue" id="autoSizingSelect">
+    <select class="form-select" name="entry.1562675470" id="autoSizingSelect">
       <option selected>Bitte auswählen...</option>
-      <option value="1">Feedback</option>
-      <option value="2">Interne schulung</option>
-      <option value="3">Akedemie technisch</option>
-      <option value="4">Recruiting</option>
-      <option value="5">Ausbildung PLUS</option>
-      <option value="6">Allgemeine Anfrage</option>
+      <option value="Feedback">Feedback</option>
+      <option value="Interne schulung">Interne schulung</option>
+      <option value="Akedemie technisch">Akedemie technisch</option>
+      <option value="Recruiting">Recruiting</option>
+      <option value="Ausbildung PLUS">Ausbildung PLUS</option>
+      <option value="Allgemeine Anfrage">Allgemeine Anfrage</option>
     </select>
       <div class="mb-3">
         <label for="Nachricht" class="form-label">Nachricht</label>
-        <textarea class="form-control" placeholder="Nachricht" name="message" aria-label="With textarea"></textarea>
+        <textarea class="form-control" placeholder="Nachricht" name="entry.1055453299" aria-label="With textarea"></textarea>
     <div class="col-auto" id="subbtn">
-        <button type="submit" class="btn btn-primary text-center">Absenden</button>
+        <button id="openLinksButton" type="submit" class="btn btn-primary text-center">Absenden</button>
       </div>
       
       </div>
@@ -80,5 +86,6 @@
           </ul>
         </div>
       </footer>
+      <script src="script.js"></script>
 </body>
 </html>
