@@ -1,17 +1,19 @@
-#head{
-background-color: white;
-}
-.logo{
-    display: inline-block;
-    margin-left: 80px;
-    margin-top: 20px;
-}
-h1{
-    display: inline-block;
-    margin: 30%;
-    font-family: 'Lato', sans-serif;
+#head {
     
+    
+    padding: 10px; /* Add padding for spacing */
 }
+
+.logo {
+    margin-bottom: 10px; /* Adjust the margin as needed */
+}
+
+h1 {
+    text-align: center; /* Remove default margin to avoid extra space */
+}
+
+
+
 footer{
     background-color: gray;
     margin-bottom: 0;
@@ -42,14 +44,22 @@ span{
     font-weight: bold;
 }
 #kontakt-form{
-width: 65%;
-margin-left: 15%;
+width: 60%;
+margin: 0 auto;
 margin-top: 5%;
 margin-bottom: 20px;
 background-color: rgb(245, 245, 245);
 padding: 10px;
 border-radius: 10px;
+max-width: 600px;
 }
+@media only screen and (max-width: 450px) {
+    #kontakt-form{
+        width: 80%;
+    }
+    
+}
+
 .btn-primary{
     
     width: 100px;
@@ -70,4 +80,24 @@ textarea{
     text-align: center;
     padding-top: 5%;
 
+}
+.myButton:hover .btn {
+    background-color: #e30613; /* Red when hovering */
+    color: white; /* Text color when hovering */
+}
+#azubi_video {
+    text-align: center;
+    overflow: hidden;
+    
+}
+
+#azubi_video iframe {
+    max-width: 100%;
+    margin: 0 auto; /* Center the iframe horizontally */
+    border-radius: 15px;
+}
+@media (max-width: 750px) {
+    #azubi_video iframe {
+        width: 70%; 
+    }
 }
