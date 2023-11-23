@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de-DE">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,51 +10,126 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap" rel="stylesheet">
     <link type="image/png" href="https://www.solvis.de/wp-content/uploads/2017/09/SOLVIS_favicon.png" rel="icon">
+    <style>
+      .loader {
+          margin: auto;
+
+border: 20px solid #EAF0F6;
+border-radius: 50%;
+border-top: 20px solid #FF7A59;
+width: 100px;
+height: 100px;
+animation: spinner 4s linear infinite;
+}
+
+@keyframes spinner {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+#loading-screen {
+          
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+      }
+
+
+
+  </style>
   
 </head>
 <body>
-    <div id="head">
-        <div class="logo"><img src="./content/solvis.png" width="125" height="68" alt="Solvis logo"></div>
-        <h1>Kontakt & Anfragen</h1>
-    </div>
-    <form id="myForm" class="row needs-validation"  action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeSTKmBmcaICLCFiq9ReU_Zdj6mHNLZCtR3R7DvOF-AYhNeLw/formResponse" method="POST" novalidate>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="./index.html"><img src="./content/solvis.png" width="125" height="68" alt="Solvis logo"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item myButton">
+                <a class="nav-link btn btn-light w-100 mr-3" aria-current="page" href="./index.html">Home</a>
+              </li>
+              <li class="nav-item myButton">
+                <a class="nav-link btn btn-light w-100" href="#">Akademie</a>
+              </li>
+              <li class="nav-item myButton">
+                <a class="nav-link btn btn-light w-100" href="./Projektschmiede.html">Projektschmiede</a>
+              </li>
+              <li class="nav-item myButton">
+                <a class="nav-link btn btn-light w-100" href="#">Ausbildung <span>PLUS</span></a>
+              </li>
+              <li class="nav-item dropdown myButton">
+                <a class="nav-link dropdown-toggle btn btn-light w-100" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Hilfe
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item " href="./Kontakt.html">Kontakt</a></li>
+                  <li><a class="dropdown-item " href="#">FAQs</a></li>
+                  <li><a class="dropdown-item " href="#"></a></li>
+                </ul>
+              </li>
+            </ul>
+            <span class="navbar-text">
+              
+            </span>
+          </div>
+        </div>
+      </nav>
+      <h1>Kontakt & Anfragen</h1>
+  </header>
+      
+    <form id="myForm" class="row needs-validation"  action="https://script.google.com/macros/s/AKfycbxQkneg0q44NI_2vcVrR4yTq5KozS-s3mmJRTMay3A_BG82N1JURPctLT6xAL4SyqQ/exec" method="POST" target="popup" novalidate>
     <div id="kontakt-form">
     <div class="row">
-        <div class="col">
+        <div class="col-md-6">
             <label for="validationServer01" class="form-label">Vorname*</label>
-          <input type="text" class="form-control" placeholder="Vorname" name="entry.57429747" aria-label="Vornname" required>
+          <input type="text" class="form-control" placeholder="Vorname" name="Vorname" aria-label="Vornname" required>
           <div class="invalid-feedback">
             Bitte ausfüllen!
           </div>
         </div>
         <div class="col">
             <label for="formGroupExampleInput2" class="form-label">Nachname*</label>
-          <input type="text" class="form-control" placeholder="Nachname" name="entry.372197608"  aria-label="Nachname" required>
+          <input type="text" class="form-control" placeholder="Nachname" name="Nachname"  aria-label="Nachname" required>
           <div class="invalid-feedback">
             Bitte ausfüllen!
           </div>
         </div>
     </div>
     <div class="row">
-        <div class="col">
+        <div class="col-md-6">
             <label for="EmailAddressInput" class="form-label">Email*</label>
-          <input type="email" class="form-control" placeholder="Email" id="EmailAddressInput" name="entry.1825799818" required>
+          <input type="email" class="form-control" placeholder="Email" id="EmailAddressInput" name="Email" required>
           <div class="invalid-feedback">
             Falsche E-Mail Adresse!
         </div>
         </div>
         <div class="col">
             <label for="formGroupExampleInput2" class="form-label">Telephone</label>
-          <input type="text" class="form-control" placeholder="Telephone" name="entry.954814767" aria-label="Telephone">
+            <input type="text" class="form-control" id="phoneNumber" placeholder="Telephone" name="Telephone" aria-label="Telephone" 
+       oninput="javascript: 
+                var numericValue = this.value.replace(/[^0-9-]/g, '');
+                var numericLength = numericValue.replace(/-/g, '').length;
+                if (numericLength > this.maxLength) {
+                  this.value = numericValue.slice(0, this.maxLength);
+                } else {
+                  this.value = numericValue;
+                }" 
+       pattern="[0-9-]*" 
+       maxlength="11">
         </div>
     </div>
     <label for="inputunternehmen4" class="form-label">Unternehmen</label>
-    <input type="Unternehmen" class="form-control" id="inputunternehmen4" name="entry.369840548" placeholder="Unternehmen" aria-label="Unternehmen">
+    <input type="Unternehmen" class="form-control" id="inputunternehmen4" name="Unternehmen" placeholder="Unternehmen" aria-label="Unternehmen">
     
         
 
         <label for="formGroupExampleInput2" class="form-label">Anliegen</label>
-    <select class="form-select" name="entry.1562675470" id="autoSizingSelect">
+    <select class="form-select" name="Anliegen" id="autoSizingSelect">
       <option selected>Bitte auswählen...</option>
       <option value="Feedback">Feedback</option>
       <option value="Interne schulung">Interne schulung</option>
@@ -65,7 +140,7 @@
     </select>
       <div class="mb-3">
         <label for="Nachricht" class="form-label">Nachricht</label>
-        <textarea class="form-control" placeholder="Nachricht" name="entry.1055453299" aria-label="With textarea"></textarea>
+        <textarea class="form-control" placeholder="Nachricht" name="Nachricht" aria-label="With textarea"></textarea>
     <div class="col-auto" id="subbtn">
         <button id="openLinksButton" type="submit" class="btn btn-primary text-center">Absenden</button>
       </div>
@@ -73,22 +148,35 @@
       </div>
     </div>
     </form>
+  
 
-      <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-3 py-4 border-top">
+    <footer class="container-fluid py-4 border-top">
+      <div class="row">
+        <!-- First Column -->
         <div class="col mb-3 mx-5">
           <h5>Impressum</h5>
           <ul class="nav flex-column">
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Datenschutz</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">Datenschutz</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">FAQs</a></li>
           </ul>
         </div>
+    
+        <!-- Second Column -->
         <div class="col mb-3 mx-5">
-            <h5 id="hk">h</h5>
+          <h5 id="hk">h</h5>
           <ul class="nav flex-column">
-            <li class="nav-item mb-2"><a href="./Kontakt.html" class="nav-link p-0 text-body-secondary">Kontakt</a></li>
+            <li class="nav-item mb-2 link"><a href="./Kontakt.html" class="nav-link p-0 ">Kontakt</a></li>
           </ul>
         </div>
-      </footer>
+      </div>
+    </footer>
       <script src="script.js"></script>
+      <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
 </body>
 </html>

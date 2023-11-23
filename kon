@@ -11,8 +11,8 @@
   border: 20px solid #EAF0F6;
   border-radius: 50%;
   border-top: 20px solid #FF7A59;
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
   animation: spinner 4s linear infinite;
 }
 
@@ -36,7 +36,7 @@
 <body>
     <form 
   method="POST" 
-  action="https://script.google.com/macros/s/AKfycbzK9XpGmKyIT-s-aZgCe8bYqFoSXHNo3S1YPZjZ1epaF8AYf6TSCulnTI0wgQ1opp3v/exec"
+  action="https://script.google.com/macros/s/AKfycbwsJWSA2l_zflbrEKHnmJEAbmWGgmSiNYzSp-RNLGw-YlOdfy8_bHQOS1zwEbb0K3T-/exec"
   id="myForm"
 >
   <input name="Email" type="email" placeholder="Email" required>
@@ -53,7 +53,7 @@
       event.preventDefault();  // Prevent the default form submission behavior
 
       // Use fetch to submit the form data to the Google Apps Script
-      fetch('https://script.google.com/macros/s/AKfycbzK9XpGmKyIT-s-aZgCe8bYqFoSXHNo3S1YPZjZ1epaF8AYf6TSCulnTI0wgQ1opp3v/exec', {
+      fetch('https://script.google.com/macros/s/AKfycbwsJWSA2l_zflbrEKHnmJEAbmWGgmSiNYzSp-RNLGw-YlOdfy8_bHQOS1zwEbb0K3T-/exec', {
         method: 'POST',
         body: new FormData(event.target),
       })
@@ -62,7 +62,7 @@
         // Handle the response
         if (data.result === 'success') {
           // Redirect to the specified URL
-          window.location.href = data.redirectUrl;
+          window.location.href = data.link;
         } else {
           console.error('Form submission failed:', data.error);
         }
