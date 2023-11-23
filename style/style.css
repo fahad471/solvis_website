@@ -1,40 +1,70 @@
-#head{
-background-color: white;
+html{
+    padding: 0;
+   
 }
-.logo{
-    display: inline-block;
-    margin-left: 80px;
+
+
+.logo {
     margin-top: 20px;
+    margin-bottom: 5px; 
+    margin-left: 4rem;
 }
-h1{
-    display: inline-block;
-    margin: 30%;
-    font-family: 'Lato', sans-serif;
-    
+
+h1 {
+    text-align: center; 
+    margin-top: 3rem !important;
 }
+
+
+
 footer{
+    
     background-color: gray;
     margin-bottom: 0;
     padding-bottom: 0;
+    mar
 }
 #hk{
-    color: gray;
+    color: rgb(59, 57, 57);
 }
 .para{
     justify-content: center;
     margin-top: 30px;
     margin-left: 80px;
-    margin-right: 80px;
+    margin-right: 150px;
     text-align: justify;
+    
+}
+@media (max-width: 950px) {
+    .para {
+        display: block;
+        margin-left: 40px !important; /* Center the div horizontally */
+        margin-right: 40px;
+          /* Remove the float for centering */
+    }
+}
+@media (max-width: 450px) {
+    .para {
+        width: 80%;
+        margin-left: 20px !important;
+        margin-right: 0px !important;
+    }
 }
 .btn{
     width: 27%;
     font-weight: 450 !important;
 }
-#heater{
+.heater{
     margin-left: 40px;
     float: left;
-    height: 400px;
+    height: 300px;
+}
+@media (max-width: 950px) {
+    .heater {
+        display: block;
+        margin: 0 auto !important; /* Center the div horizontally */
+        float: none !important;    /* Remove the float for centering */
+    }
 }
 
 
@@ -42,14 +72,22 @@ span{
     font-weight: bold;
 }
 #kontakt-form{
-width: 65%;
-margin-left: 15%;
+width: 60%;
+margin: 0 auto;
 margin-top: 5%;
 margin-bottom: 20px;
 background-color: rgb(245, 245, 245);
 padding: 10px;
 border-radius: 10px;
+max-width: 600px;
 }
+@media only screen and (max-width: 450px) {
+    #kontakt-form{
+        width: 80%;
+    }
+    
+}
+
 .btn-primary{
     
     width: 100px;
@@ -71,3 +109,63 @@ textarea{
     padding-top: 5%;
 
 }
+.myButton:hover .btn {
+    /* background-color: #e30613;  */
+    background-color: rgba(var(--bs-tertiary-bg-rgb),var(--bs-bg-opacity))!important; 
+    color: #e30613; /* Text color when hovering */
+}
+.myButton{
+    margin-right: 20px;
+}
+.active{
+    background-color: rgba(var(--bs-tertiary-bg-rgb),var(--bs-bg-opacity))!important; 
+    color: #e30613 !important;
+}
+#azubi_video {
+    text-align: left;
+    overflow: hidden;
+    
+}
+
+#azubi_video iframe {
+    max-width: 100%;
+    margin-left: 14rem; /* Center the iframe horizontally */
+    border-radius: 15px;
+}
+@media (max-width: 950px) {
+    #azubi_video iframe {
+        width: 85%;
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+}
+@media (max-width: 450px) {
+    #azubi_video iframe {
+        width: 80%;
+        margin-left: 20px;
+        margin-right: 40px;
+    }
+}
+footer .nav-link:hover {
+    color: red !important;
+  }
+  footer
+  {
+    background-color: rgb(59, 57, 57);
+    color: white;
+  }
+  footer .nav-link {
+    color: white;
+  }
+  .nav-item:hover .dropdown-menu {
+    display: block;
+  }
+  .nav-item.dropdown:hover .nav-link,
+  .nav-item.dropdown:hover .dropdown-menu a {
+    color: initial;
+  }
+
+  .nav-item.dropdown:hover .dropdown-menu a:hover {
+    color: red;
+  }
+  
